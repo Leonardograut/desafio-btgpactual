@@ -14,8 +14,8 @@ public class OrderCreatedEvent {
     @JsonProperty("codigoCliente")
     Long codigoCliente;
 
-    @JsonProperty("items")
-    List<OrderItemEvent>items;
+    @JsonProperty("itens")
+    List<OrderItemEvent>itens;
 
     public Long getCodigoPedido() {
         return codigoPedido;
@@ -34,11 +34,11 @@ public class OrderCreatedEvent {
     }
 
     public List<OrderItemEvent> getItems() {
-        return items;
+        return itens;
     }
 
-    public void setItems(List<OrderItemEvent> items) {
-        this.items = items;
+    public void setItems(List<OrderItemEvent> itens) {
+        this.itens = itens;
     }
 
     @Override
@@ -46,7 +46,7 @@ public class OrderCreatedEvent {
         return "OrderCreatedEvent{" +
                 "codigoPedido=" + codigoPedido +
                 ", codigoCliente=" + codigoCliente +
-                ", itens=" + items +
+                ", itens=" + itens +
                 '}';
     }
 }
