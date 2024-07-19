@@ -13,9 +13,13 @@
   <img alt="Version: 1.0" src="https://img.shields.io/badge/version-1.0-yellowgreen">
 </p>
 
-## Desafio
+## Desafio :
 
-Confira o enunciado completo do desafio [clicando aqui](./problem.md).
+![image](https://github.com/user-attachments/assets/36ce8fb0-b2c6-4a1c-9e81-0497f7535fc4)
+
+
+![image](https://github.com/user-attachments/assets/2e3c0501-a2b7-4787-8585-37d98aa24fd7)
+
 
 ## Interação com o Banco de Dados
 
@@ -40,7 +44,7 @@ Siga os passos abaixo para rodar o projeto na sua máquina local:
 ### Pré-requisitos
 
 - Docker instalado na sua máquina
-- Java 17 instalado
+- Java 19 instalado
 - MongoDB Compass instalado
 
 ### Passo a Passo
