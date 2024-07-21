@@ -1,10 +1,13 @@
 package com.btgpactual.desafio.service;
 
+import com.btgpactual.desafio.controller.dto.OrderResponse;
 import com.btgpactual.desafio.entity.OrderEntity;
 import com.btgpactual.desafio.entity.OrderItem;
 import com.btgpactual.desafio.listener.dto.OrderCreatedEvent;
 import com.btgpactual.desafio.listener.dto.OrderItemEvent;
 import com.btgpactual.desafio.repository.OrderRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -60,6 +63,12 @@ public class OrderService {
         }
 
         return orderItems;
+    }
+
+    public Page<OrderResponse> findAllByCustomerId(Long customerId, PageRequest pageRequest){
+        final Page<OrderEntity> orders = orderRepository.findAllByCustomerId(customerId, pageRequest);
+
+        return orders.map(OrderResponse::fromEntity);
     }
 
 }
