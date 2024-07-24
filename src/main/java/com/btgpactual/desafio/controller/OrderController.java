@@ -12,6 +12,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+import java.util.Map;
+
 
 @RestController
 public class OrderController {
@@ -29,7 +32,10 @@ public class OrderController {
 
         final Page<OrderResponse> body = orderService.findAllByCustomerId(customerId, PageRequest.of(page, pageSize));
 
+        final BigDecimal totalOnOrders = orderService.findTotalOnOrdersByCustomerId(customerId);
+
         return ResponseEntity.ok(new ApiResponse<>(
+                 Map.of("totalOnOrders",totalOnOrders),
                  body.getContent(),new PaginationResponse(body.getNumber(),
                                         body.getSize(),
                                         body.getTotalPages(),
